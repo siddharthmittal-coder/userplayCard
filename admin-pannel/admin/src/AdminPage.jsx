@@ -8,7 +8,7 @@ function AdminPage() {
 
   // Get Users
   const getUsers = async () => {
-    const res = await axios.post("http://localhost:5000/admin/all-users", {
+    const res = await axios.post("https://userplaycard-backend.onrender.com/admin/all-users", {
       email,
       password
     });
@@ -19,7 +19,7 @@ function AdminPage() {
 
   // Run Draw
   const runDraw = async () => {
-    const res = await axios.post("http://localhost:5000/admin/run-draw", {
+    const res = await axios.post("https://userplaycard-backend.onrender.com/admin/run-draw", {
       email,
       password
     });
