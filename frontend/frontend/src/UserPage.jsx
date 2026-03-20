@@ -7,7 +7,7 @@ function UserPage() {
   const [score,setScore] = useState("")
   const [result,setResult] = useState("")
   const signUp = async() =>{
-    await axios.post("http://localhost:5000/api/signup",{
+    await axios.post("https://userplaycard-backend.onrender.com/api/signup",{
       email,password
     });
     alert("SignUp done")
@@ -15,7 +15,7 @@ function UserPage() {
     setPassword("");
   }
   const Login = async() =>{
-    await axios.post("http://localhost:5000/api/login",{
+    await axios.post("https://userplaycard-backend.onrender.com/api/login",{
       email,password
     });
     alert("Login done")
@@ -23,14 +23,14 @@ function UserPage() {
     setPassword("");
   }
   const AddScore = async() =>{
-    await axios.post("http://localhost:5000/api/add-score",{
+    await axios.post("https://userplaycard-backend.onrender.com/api/add-score",{
       email,score:Number(score)
     });
     alert("Score Added")
     setScore("");
   }
   const draw = async() =>{
-    const res = await axios.get(`http://localhost:5000/api/draw?email=${email} `)
+    const res = await axios.get(`https://userplaycard-backend.onrender.com/api/draw?email=${email} `)
     console.log(res.data)
     setResult(res.data);
     };
